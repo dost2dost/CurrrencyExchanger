@@ -39,9 +39,13 @@ public class CurrencyMan {
             symbol="EUR";
         }
 
+        try {
+            if(amount!=null && exchangeFee!=null && !symbol.equalsIgnoreCase(""))
+                System.out.println(converterWrapper.convert(Double.valueOf(amount),Double.valueOf(exchangeFee),symbol));
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
 
-        if(amount!=null && exchangeFee!=null && !symbol.equalsIgnoreCase(""))
-        System.out.println(converterWrapper.convert(Double.valueOf(amount),Double.valueOf(exchangeFee),symbol));
 
 
 
